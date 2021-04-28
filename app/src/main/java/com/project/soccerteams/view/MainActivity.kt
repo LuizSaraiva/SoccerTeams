@@ -1,10 +1,11 @@
-package com.project.soccerteams
+package com.project.soccerteams.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.project.soccerteams.R
 import com.project.soccerteams.mock.MockChampionship
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {

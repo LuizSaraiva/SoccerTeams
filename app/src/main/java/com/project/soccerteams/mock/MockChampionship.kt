@@ -1,6 +1,6 @@
 package com.project.soccerteams.mock
 
-import com.project.soccerteams.SingletonChampionship
+import com.project.soccerteams.singleton.SingletonChampionship
 import com.project.soccerteams.model.Championship
 import com.project.soccerteams.model.SoccerTeams
 

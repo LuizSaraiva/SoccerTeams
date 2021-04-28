@@ -1,4 +1,4 @@
-package com.project.soccerteams
+package com.project.soccerteams.singleton
 
 import com.project.soccerteams.model.Championship
 

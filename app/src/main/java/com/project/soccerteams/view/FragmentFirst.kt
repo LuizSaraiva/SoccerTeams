@@ -1,4 +1,4 @@
-package com.project.soccerteams
+package com.project.soccerteams.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.project.soccerteams.FragmentFirstAdapter
+import com.project.soccerteams.R
+import com.project.soccerteams.singleton.SingletonChampionship
 
 class FragmentFirst : Fragment() {
 
