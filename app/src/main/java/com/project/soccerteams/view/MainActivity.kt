@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     lateinit var navBottomMain: BottomNavigationView
     lateinit var fragmentFirst: FragmentFirst
+    lateinit var fragmentSecond: FragmentSecond
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,8 +34,21 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId){
-            R.id.itemEurope -> {
-
+            R.id.item_europe -> {
+                fragmentFirst = FragmentFirst()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frag_main,fragmentFirst)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
+            }
+            R.id.item_world_cup ->{
+                fragmentSecond = FragmentSecond()
+                supportFragmentManager
+                    .beginTransaction()
+                    .replace(R.id.frag_main, fragmentSecond)
+                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                    .commit()
             }
         }
         return true
