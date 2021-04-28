@@ -2,7 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/itemEurope"
+        android:id="@+id/item_europe"
         android:icon="@drawable/ico_europe"
         android:title="UEFA"/>
+
+    <item
+        android:id="@+id/item_world_cup"
+        android:icon="@drawable/ico_world_cup"
+        android:title="World Cup"/>
 </menu>
