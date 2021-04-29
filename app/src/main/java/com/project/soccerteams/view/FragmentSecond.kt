@@ -1,5 +1,7 @@
 package com.project.soccerteams.view
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.project.soccerteams.ActivityInfoTeams
 import com.project.soccerteams.R
 import com.project.soccerteams.singleton.SingletonChampionship
 
@@ -26,8 +29,16 @@ class FragmentSecond : Fragment() {
         rv_second = view.findViewById(R.id.rv_second)
         val layoutManager = LinearLayoutManager(view.context)
         rv_second.layoutManager = layoutManager
-        rv_second.adapter = FragmentSecondAdapter(idItemBottomView, SingletonChampionship.list)
+        rv_second.adapter = FragmentSecondAdapter(
+            idItemBottomView,
+            SingletonChampionship.list
+        ) { onClickItemRecycleView(view.context, it) }
 
         return view
+    }
+
+    private fun onClickItemRecycleView(context: Context, id: Int) {
+        var intent = Intent(context, ActivityInfoTeams::class.java).putExtra("id", id)
+        startActivity(intent)
     }
 }
