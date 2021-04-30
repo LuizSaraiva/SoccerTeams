@@ -30,7 +30,10 @@ class FragmentSecondAdapter(
         var championship = listChampionship[idItemBottomView].listSoccerTeams[position]
 
         holder.txName.text = championship.name
-        holder.image.load(championship.image)
+        holder.image.load(championship.image) {
+            fallback(R.drawable.ic_image)
+            error(R.drawable.ic_image)
+        }
         holder.layout.setOnClickListener { onClick(championship.id) }
     }
 
