@@ -9,8 +9,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.project.soccerteams.ActivityInfoTeams
+import com.project.soccerteams.ActivityDestailsTeams
 import com.project.soccerteams.R
+import com.project.soccerteams.model.Championship
 import com.project.soccerteams.singleton.SingletonChampionship
 
 class FragmentSecond : Fragment() {
@@ -32,13 +33,15 @@ class FragmentSecond : Fragment() {
         rv_second.adapter = FragmentSecondAdapter(
             idItemBottomView,
             SingletonChampionship.list
-        ) { onClickItemRecycleView(view.context, it) }
+        ) { onClickItemRecycleView(view.context,1, it) }
 
         return view
     }
 
-    private fun onClickItemRecycleView(context: Context, id: Int) {
-        var intent = Intent(context, ActivityInfoTeams::class.java).putExtra("id", id)
+    private fun onClickItemRecycleView(context: Context, idChampionship: Int,idTeam: Int) {
+        var intent = Intent(context, ActivityDestailsTeams::class.java)
+            .putExtra("idChamphionship", idChampionship)
+            .putExtra("idTeam",idTeam)
         startActivity(intent)
     }
 }
