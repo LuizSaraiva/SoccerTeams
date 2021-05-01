@@ -1,23 +1,19 @@
 package com.project.soccerteams
 
-import android.content.Intent
-import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import coil.load
-import com.project.soccerteams.model.Championship
-import com.project.soccerteams.model.SoccerTeams
 import com.project.soccerteams.singleton.SingletonChampionship
-import org.w3c.dom.Text
 
 class ActivityDestailsTeams : AppCompatActivity() {
 
     lateinit var imageTeam:ImageView
     lateinit var nameTeam:TextView
     lateinit var descTeam:TextView
+    lateinit var toolbar: Toolbar
 
     var idChampionship:Int = 0
     var idTeam:Int = 0
@@ -42,6 +38,18 @@ class ActivityDestailsTeams : AppCompatActivity() {
         nameTeam = findViewById(R.id.name_team)
         imageTeam = findViewById(R.id.image_team_detail)
         descTeam = findViewById(R.id.desc_team)
+        toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        supportActionBar?.apply {
+            setDisplayHomeAsUpEnabled(true)
+            setDisplayShowHomeEnabled(true)
+        }
+
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     private fun applyDatailsTeam(){
@@ -52,5 +60,4 @@ class ActivityDestailsTeams : AppCompatActivity() {
         descTeam.text = soccerTeams.info
         imageTeam.load(soccerTeams.image)
     }
-
 }
